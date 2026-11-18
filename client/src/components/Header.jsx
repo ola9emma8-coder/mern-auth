@@ -3,15 +3,17 @@ import { assets } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 
-  const navigate = useNavigate();
+  
 
-  const start = (e) => {
-    e.preventDefault();
-    navigate("/login")
-  };
+  
 
 export default function Header(){
     const {userData} = useContext(AppContext);
+    const navigate = useNavigate();
+    const start = (e) => {
+    e.preventDefault();
+    navigate("/login")
+  };
     return(
         <div className="flex flex-col items-center mt-20 px-4 text-center text-gray-800">
             <img src={assets.header_img} alt="" className="w-36 h-36 rounded-full mb-6" />

@@ -41,8 +41,8 @@ export default function Login(){
          }
         }
       } catch (error) {
-        toast.error(data.message)
-      }
+  toast.error(error.response?.data?.message || error.message)
+}
    }
 
     return(
