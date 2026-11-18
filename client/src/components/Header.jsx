@@ -1,6 +1,14 @@
 import { useContext } from "react";
 import { assets } from "../assets/assets";
 import { AppContext } from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
+
+  const navigate = useNavigate();
+
+  const start = (e) => {
+    e.preventDefault();
+    navigate("/login")
+  };
 
 export default function Header(){
     const {userData} = useContext(AppContext);
@@ -16,7 +24,7 @@ export default function Header(){
             <p className="mb-8 max-w-md">Let's start with a quick product tour and we will have you up and running
                 in no time!
             </p>
-            <button className="border border-gray-500 rounded-full px-8 py-2.5
+            <button onClick={start} className="border border-gray-500 rounded-full px-8 py-2.5
             hover:bg-gray-100 transition-all cursor-pointer">Get Started</button>
         </div>
     )
